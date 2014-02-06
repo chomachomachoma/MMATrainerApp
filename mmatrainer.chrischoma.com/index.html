@@ -1,0 +1,644 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>MMA TRAINER DEMO</title>
+		<style type="text/css" media="screen">@import "assets/css/jqtouch.css";</style>
+		<script src="assets/js/jquery.1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/jqtouch.min.js" type="application/x-javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			var jQT = new $.jQTouch({
+				icon: 'assets/images/icon.png',
+				addGlossToIcon: true,
+				startupScreen: 'assets/images/bg_loading.jpg',
+				statusBar: 'black',
+			});
+		</script>	
+		<style>
+			body {background:#8e8e8e;width:320px; margin:0 auto;}
+			.headerImage {border-bottom:1px solid #363636;}
+			.toolbar {background:url(assets/images/bg_toolbar.png) repeat-x;}
+			.toolbarTimer {height:51px;background:url(assets/images/bg_toolbar.png) repeat-x;}
+			.toolbarglossary {background:url(assets/images/bg_toolbarGlossary.png) repeat-x;}		
+			#home_content {height:397px;background:url(assets/images/bg_kick_texture.jpg);}		
+			ul.scrollList {height:293px;overflow-y:auto;padding-top:4px;border-bottom:1px solid #2f2f2f;}
+			ul.scrollListGlossary {height:251px;overflow-y:auto;padding-top:4px;border-bottom:1px solid #2f2f2f;}		
+			ul.scrollList li, ul.scrollListGlossary li {height:40px;margin:0 !important;background:#8e8e8e;border-bottom:1px solid #5d5d5d;border-top:1px solid #ababab;margin-top:5px;list-style-type:none;}
+			ul.scrollList li img, ul.scrollListGlossary li img {margin:15px 0 0 23px;}
+			ul.scrollList li.first, ul.scrollListGlossary li.first {border-top:none;}
+			ul.scrollList li.arrow, ul.scrollListGlossary li.arrow {background:#8e8e8e url(assets/images/arrowRight.png) no-repeat 300px 13px;}
+			ul.scrollList li a, ul.scrollListGlossary li a {display:block;width:100%;height:40px;}
+			ul.scrollList li a:active, ul.scrollListGlossary li a:active {background:#560105;color:#FFF;}		
+			ul.navList li{display:inline;float:left;}
+			.shadow {width:100%;height:6px;background:url(assets/images/shadow.png) repeat-x;position:absolute;top:93px;}
+			.shadowglossary {width:100%;height:6px;background:url(assets/images/shadow.png) repeat-x;position:absolute;top:140px;}		
+			#searchinput {width:100%;height:42px;background:#2b2b2b;}
+			#searchinput input {width:260px;height:27px;font-family:arial,sans-serif;background:url(assets/images/bg_search.jpg) no-repeat;border-style:none;padding:0 5px 0 30px;margin:3px 0 0 12px;}		
+			#timer_container {width:100%;height:346px;background:url(assets/images/bg_kick_texture.jpg);}
+			#timer_display {width:100%;height:138px;}
+			#timer_control {width:100%;height:205px;}
+			#timer_control img {margin:-3px 0 0 0;padding:0 !important;}
+			#timer_display_input {width:283px;height:77px;font-size:70px;text-align:right;background:url(assets/images/bg_display.jpg) no-repeat;border:none;margin:41px 0 0 14px;padding:3px 10px 0 0;color:#8dc034;}		
+			#timer_container_horizontal {width:480px;height:300px;background:url(assets/images/bg_kick_texture_horizontal.jpg);border-right:1px solid #FF0000;padding: 0 0 0 44px}
+			#timer_display_horizontal {width:100%;height:165px;}
+			#timer_control_horizontal {width:100%;height:130px;}
+			#timer_control_horizontal img {margin:-3px 0 0 0;padding:0 !important;}
+			#timer_display_horizontal_input {width:377px;height:108px;font-size:90px;text-align:right;background:url(assets/images/bg_display_horizontal.jpg) no-repeat;border:none;margin:45px 0 7px 0;padding:3px 15px 0 0;color:#8dc034;}
+			.backbutton {margin-top:-5px;}
+			.pagetitle {margin-top:-8px;float:left;}
+		</style>
+	</head>	
+	<body>		
+<!--///// HOME SLIDE /////-->	
+<!--**********BEGIN SLIDE***********-->
+		<div id="home" class="current">
+			<div id="home_content">
+				<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />			   
+			</div><!-- END TOOLBAR -->
+			<ul class="navList">
+				<li><a href="#timer"><img src="assets/images/bt01.jpg" border="0"/></a></li>
+				<li><a href="#video_tutorials"><img src="assets/images/bt02.jpg" border="0" /></a></li>
+				<li><a href="#glossary"><img src="assets/images/bt03.jpg" border="0" /></a></li>
+			</ul><!-- END NAVLIST -->
+		</div><!-- END VIDEO TUTORIALS -->
+<!--**********END SLIDE***********-->
+
+<!--///// VIDEO TUTORIALS MAIN SLIDE /////-->	
+<!--**********BEGIN SLIDE***********-->
+		<div id="video_tutorials">
+			<div class="toolbar">
+				<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />
+				<table width="100%">
+					<tr>
+						<td width="75px">
+							<a class="back" href="#"><img src="assets/images/btBack.jpg" alt="back" class="backbutton" /></a>
+						</td>
+						<td>
+							<img src="assets/images/hd_video_tutorials.png" alt="VIDEO TUTORIALS" class="pagetitle" />
+						</td>
+					</tr>
+				</table>			   
+			</div><!-- END TOOLBAR -->
+			<ul class="scrollList">
+				<li class="arrow first"><a href="#brazjit"><img src="assets/images/li_brazilian_jujitsu.png" alt="BRAZILIAN JUJITSU" /></a></li>
+				<li class="arrow"><a href="#muy_tai_kickboxing"><img src="assets/images/li_muy_tai_kickboxing.png" alt="MUY TAI KICKBOXING" /></a></li>
+				<li class="arrow"><a href="#boxing"><img src="assets/images/li_boxing.png" alt="BOXING" /></a></li>
+				<li>&nbsp;</li>
+				<li>&nbsp;</li>
+				<li>&nbsp;</li>
+				<li>&nbsp;</li>
+			</ul><!-- END SCROLLLIST -->
+			<ul class="navList">
+				<li><a href="#timer"><img src="assets/images/bt01.jpg" border="0"/></a></li>
+				<li><img src="assets/images/bt02.jpg" border="0" /></li>
+				<li><a href="#glossary"><img src="assets/images/bt03.jpg" border="0" /></a></li>
+			</ul><!-- END NAVLIST -->
+			<div class="shadow"></div>
+		</div><!-- END VIDEO TUTORIALS -->
+<!--**********END SLIDE***********-->
+		
+		<!--///// VIDEO BRAZILIAN JUJITSU VIDEOS SLIDE /////-->
+		<!--**********BEGIN SLIDE***********-->
+				<div id="brazjit">
+					<div class="toolbar">
+						<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />
+						<table width="100%">
+							<tr>
+								<td width="75px">
+									<a class="back" href="#"><img src="assets/images/btBack.jpg" alt="back" class="backbutton" /></a>
+								</td>
+								<td>
+									<img src="assets/images/hd_brazjit.png" alt="BRAZILIAN JUJITSU" class="pagetitle" />
+								</td>
+							</tr>
+						</table>			   
+					</div><!-- END TOOLBAR -->
+					<ul class="scrollList">
+						<li class="arrow first"><a href="#brazjit_positions"><img src="assets/images/li_positions.png" alt="POSITIONS" /></a></li>
+						<li class="arrow"><a href="#brazjit_transitions"><img src="assets/images/li_transitions.png" alt="TRANSITIONS" /></a></li>
+						<li class="arrow"><a href="#brazjit_escapes"><img src="assets/images/li_escapes.png" alt="ESCAPES" /></a></li>
+						<li class="arrow"><a href="#brazjit_armlocks"><img src="assets/images/li_arm_locks.png" alt="ARM LOCKS" /></a></li>
+						<li class="arrow"><a href="#brazjit_chokes"><img src="assets/images/li_chokes.png" alt="CHOKES" /></a></li>
+						<li class="arrow"><a href="#brazjit_leglocks"><img src="assets/images/li_leg_locks.png" alt="LEG LOCKS" /></a></li>
+						<li>&nbsp;</li>
+					</ul><!-- END SCROLLLIST -->
+					<ul class="navList">
+						<li><a href="#timer"><img src="assets/images/bt01.jpg" border="0"/></a></li>
+						<li><a href="#video_tutorials"><img src="assets/images/bt02.jpg" border="0" /></a></li>
+						<li><a href="#glossary"><img src="assets/images/bt03.jpg" border="0" /></a></li>
+					</ul><!-- END NAVLIST -->
+					<div class="shadow"></div>
+				</div><!-- END BRAZJIT -->
+		<!--**********END SLIDE***********-->
+		
+				<!--///// VIDEO BRAZILIAN JUJITSU POSTIONS VIDEOS SLIDE /////-->	
+				<!--**********BEGIN SLIDE***********-->
+						<div id="brazjit_positions">
+							<div class="toolbar">
+								<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />
+								<table width="100%">
+									<tr>
+										<td width="75px">
+											<a class="back" href="#"><img src="assets/images/btBack.jpg" alt="back" class="backbutton" /></a>
+										</td>
+										<td>
+											<img src="assets/images/hd_brazjit.png" alt="BRAZILIAN JUJITSU" class="pagetitle" />
+										</td>
+									</tr>
+								</table>			   
+							</div><!-- END TOOLBAR -->
+							<ul class="scrollList">
+								<li class="arrow first"><a href="#temp_vid" class="pop"><img src="assets/images/li_the_mount.png" alt="THE MOUNT" /></a></li>
+								<li class="arrow"><a href="#temp_vid" class="pop"><img src="assets/images/li_the_guard.png" alt="THE GUARD" /></a></li>
+								<li class="arrow"><a href="#temp_vid" class="pop"><img src="assets/images/li_the_side_mount.png" alt="THE SIDE MOUNT" /></a></li>
+								<li class="arrow"><a href="#temp_vid" class="pop"><img src="assets/images/li_north-south.png" alt="NORTH-SOUTH" /></a></li>
+								<li class="arrow"><a href="#temp_vid" class="pop"><img src="assets/images/li_scarf_hold.png" alt="SCARF HOLD" /></a></li>
+								<li class="arrow"><a href="#temp_vid" class="pop"><img src="assets/images/li_the_back_mount.png" alt="THE BACK MOUNT" /></a></li>
+								<li class="arrow"><a href="#temp_vid" class="pop"><img src="assets/images/li_knee_on_chest-stomach.png" alt="KNEE ON CHEST/STOMACH" /></a></li>
+							</ul><!-- END SCROLLLIST -->
+							<ul class="navList">
+								<li><a href="#timer"><img src="assets/images/bt01.jpg" border="0"/></a></li>
+								<li><a href="#video_tutorials"><img src="assets/images/bt02.jpg" border="0" /></a></li>
+								<li><a href="#glossary"><img src="assets/images/bt03.jpg" border="0" /></a></li>
+							</ul><!-- END NAVLIST -->
+							<div class="shadow"></div>
+						</div><!-- END BRAZJIT POSITIONS -->
+				<!--**********END SLIDE***********-->
+				
+				<!--///// VIDEO BRAZILIAN JUJITSU TRANSITIONS VIDEOS SLIDE /////-->	
+				<!--**********BEGIN SLIDE***********-->
+						<div id="brazjit_transitions">
+							<div class="toolbar">
+								<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />
+								<table width="100%">
+									<tr>
+										<td width="75px">
+											<a class="back" href="#"><img src="assets/images/btBack.jpg" alt="back" class="backbutton" /></a>
+										</td>
+										<td>
+											<img src="assets/images/hd_brazjit.png" alt="BRAZILIAN JUJITSU" class="pagetitle" />
+										</td>
+									</tr>
+								</table>			   
+							</div><!-- END TOOLBAR -->
+							<ul class="scrollList">
+								<li class="arrow first"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_a.png" alt="ITEM A" /></a></li>
+								<li class="arrow"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_b.png" alt="TITEM B" /></a></li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+							</ul><!-- END SCROLLLIST -->
+							<ul class="navList">
+								<li><a href="#timer"><img src="assets/images/bt01.jpg" border="0"/></a></li>
+								<li><a href="#video_tutorials"><img src="assets/images/bt02.jpg" border="0" /></a></li>
+								<li><a href="#glossary"><img src="assets/images/bt03.jpg" border="0" /></a></li>
+							</ul><!-- END NAVLIST -->
+							<div class="shadow"></div>
+						</div><!-- END BRAZJIT TRANSITIONS -->
+				<!--**********END SLIDE***********-->
+				
+				<!--///// VIDEO BRAZILIAN JUJITSU ESCAPES VIDEOS SLIDE /////-->	
+				<!--**********BEGIN SLIDE***********-->
+						<div id="brazjit_escapes">
+							<div class="toolbar">
+								<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />
+								<table width="100%">
+									<tr>
+										<td width="75px">
+											<a class="back" href="#"><img src="assets/images/btBack.jpg" alt="back" class="backbutton" /></a>
+										</td>
+										<td>
+											<img src="assets/images/hd_brazjit.png" alt="BRAZILIAN JUJITSU" class="pagetitle" />
+										</td>
+									</tr>
+								</table>			   
+							</div><!-- END TOOLBAR -->
+							<ul class="scrollList">
+								<li class="arrow first"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_a.png" alt="ITEM A" /></a></li>
+								<li class="arrow"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_b.png" alt="TITEM B" /></a></li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+							</ul><!-- END SCROLLLIST -->
+							<ul class="navList">
+								<li><a href="#timer"><img src="assets/images/bt01.jpg" border="0"/></a></li>
+								<li><a href="#video_tutorials"><img src="assets/images/bt02.jpg" border="0" /></a></li>
+								<li><a href="#glossary"><img src="assets/images/bt03.jpg" border="0" /></a></li>
+							</ul><!-- END NAVLIST -->
+							<div class="shadow"></div>
+						</div><!-- END BRAZJIT ESCAPES -->
+				<!--**********END SLIDE***********-->
+				
+				<!--///// VIDEO BRAZILIAN JUJITSU ARM LOCKS VIDEOS SLIDE /////-->	
+				<!--**********BEGIN SLIDE***********-->
+						<div id="brazjit_armlocks">
+							<div class="toolbar">
+								<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />
+								<table width="100%">
+									<tr>
+										<td width="75px">
+											<a class="back" href="#"><img src="assets/images/btBack.jpg" alt="back" class="backbutton" /></a>
+										</td>
+										<td>
+											<img src="assets/images/hd_brazjit.png" alt="BRAZILIAN JUJITSU" class="pagetitle" />
+										</td>
+									</tr>
+								</table>			   
+							</div><!-- END TOOLBAR -->
+							<ul class="scrollList">
+								<li class="arrow first"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_a.png" alt="ITEM A" /></a></li>
+								<li class="arrow"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_b.png" alt="TITEM B" /></a></li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+							</ul><!-- END SCROLLLIST -->
+							<ul class="navList">
+								<li><a href="#timer"><img src="assets/images/bt01.jpg" border="0"/></a></li>
+								<li><a href="#video_tutorials"><img src="assets/images/bt02.jpg" border="0" /></a></li>
+								<li><a href="#glossary"><img src="assets/images/bt03.jpg" border="0" /></a></li>
+							</ul><!-- END NAVLIST -->
+							<div class="shadow"></div>
+						</div><!-- END BRAZJIT ARM LOCKS -->
+				<!--**********END SLIDE***********-->
+				
+				<!--///// VIDEO BRAZILIAN JUJITSU CHOKES VIDEOS SLIDE /////-->	
+				<!--**********BEGIN SLIDE***********-->
+						<div id="brazjit_chokes">
+							<div class="toolbar">
+								<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />
+								<table width="100%">
+									<tr>
+										<td width="75px">
+											<a class="back" href="#"><img src="assets/images/btBack.jpg" alt="back" class="backbutton" /></a>
+										</td>
+										<td>
+											<img src="assets/images/hd_brazjit.png" alt="BRAZILIAN JUJITSU" class="pagetitle" />
+										</td>
+									</tr>
+								</table>			   
+							</div><!-- END TOOLBAR -->
+							<ul class="scrollList">
+								<li class="arrow first"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_a.png" alt="ITEM A" /></a></li>
+								<li class="arrow"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_b.png" alt="TITEM B" /></a></li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+							</ul><!-- END SCROLLLIST -->
+							<ul class="navList">
+								<li><a href="#timer"><img src="assets/images/bt01.jpg" border="0"/></a></li>
+								<li><a href="#video_tutorials"><img src="assets/images/bt02.jpg" border="0" /></a></li>
+								<li><a href="#glossary"><img src="assets/images/bt03.jpg" border="0" /></a></li>
+							</ul><!-- END NAVLIST -->
+							<div class="shadow"></div>
+						</div><!-- END BRAZJIT CHOKES -->
+				<!--**********END SLIDE***********-->
+				
+				<!--///// VIDEO BRAZILIAN JUJITSU LEG LOCKS VIDEOS SLIDE /////-->	
+				<!--**********BEGIN SLIDE***********-->
+						<div id="brazjit_leglocks">
+							<div class="toolbar">
+								<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />
+								<table width="100%">
+									<tr>
+										<td width="75px">
+											<a class="back" href="#"><img src="assets/images/btBack.jpg" alt="back" class="backbutton" /></a>
+										</td>
+										<td>
+											<img src="assets/images/hd_brazjit.png" alt="BRAZILIAN JUJITSU" class="pagetitle" />
+										</td>
+									</tr>
+								</table>			   
+							</div><!-- END TOOLBAR -->
+							<ul class="scrollList">
+								<li class="arrow first"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_a.png" alt="ITEM A" /></a></li>
+								<li class="arrow"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_b.png" alt="TITEM B" /></a></li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+							</ul><!-- END SCROLLLIST -->
+							<ul class="navList">
+								<li><a href="#timer"><img src="assets/images/bt01.jpg" border="0"/></a></li>
+								<li><a href="#video_tutorials"><img src="assets/images/bt02.jpg" border="0" /></a></li>
+								<li><a href="#glossary"><img src="assets/images/bt03.jpg" border="0" /></a></li>
+							</ul><!-- END NAVLIST -->
+							<div class="shadow"></div>
+						</div><!-- END BRAZJIT LEG LOCKS -->
+				<!--**********END SLIDE***********-->
+				
+		<!--///// VIDEO MUY TAI KICKBOXING VIDEOS SLIDE /////-->
+		<!--**********BEGIN SLIDE***********-->
+				<div id="muy_tai_kickboxing">
+					<div class="toolbar">
+						<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />
+						<table width="100%">
+							<tr>
+								<td width="75px">
+									<a class="back" href="#"><img src="assets/images/btBack.jpg" alt="back" class="backbutton" /></a>
+								</td>
+								<td>
+									<img src="assets/images/hd_muy_tai_kickboxing.png" alt="MUY TAI KICKBOXING" class="pagetitle" />
+								</td>
+							</tr>
+						</table>			   
+					</div><!-- END TOOLBAR -->
+					<ul class="scrollList">
+						<li class="arrow first"><a href="#muy_tai_kickboxing_cat1"><img src="assets/images/li_muy_tai_kickboxing_cat1.png" alt="MUY TAI VID CAT" /></a></li>
+						<li class="arrow"><a href="#muy_tai_kickboxing_cat2"><img src="assets/images/li_muy_tai_kickboxing_cat2.png" alt="MUY TAI VID CAT" /></a></li>
+						<li>&nbsp;</li>
+						<li>&nbsp;</li>
+						<li>&nbsp;</li>
+						<li>&nbsp;</li>
+						<li>&nbsp;</li>
+					</ul><!-- END SCROLLLIST -->
+					<ul class="navList">
+						<li><a href="#timer"><img src="assets/images/bt01.jpg" border="0"/></a></li>
+						<li><a href="#video_tutorials"><img src="assets/images/bt02.jpg" border="0" /></a></li>
+						<li><a href="#glossary"><img src="assets/images/bt03.jpg" border="0" /></a></li>
+					</ul><!-- END NAVLIST -->
+					<div class="shadow"></div>
+				</div><!-- END MUY TAI KICKBOXING -->
+		<!--**********END SLIDE***********-->
+		
+				<!--///// VIDEO MUY TAI KICKBOXING VIDEOS CAT1 SLIDE /////-->
+				<!--**********BEGIN SLIDE***********-->
+						<div id="muy_tai_kickboxing_cat1">
+							<div class="toolbar">
+								<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />
+								<table width="100%">
+									<tr>
+										<td width="75px">
+											<a class="back" href="#"><img src="assets/images/btBack.jpg" alt="back" class="backbutton" /></a>
+										</td>
+										<td>
+											<img src="assets/images/hd_muy_tai_kickboxing.png" alt="MUY TAI KICKBOXING" class="pagetitle" />
+										</td>
+									</tr>
+								</table>			   
+							</div><!-- END TOOLBAR -->
+							<ul class="scrollList">
+								<li class="arrow first"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_a.png" alt="ITEM A" /></a></li>
+								<li class="arrow"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_b.png" alt="TITEM B" /></a></li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+							</ul><!-- END SCROLLLIST -->
+							<ul class="navList">
+								<li><a href="#timer"><img src="assets/images/bt01.jpg" border="0"/></a></li>
+								<li><a href="#video_tutorials"><img src="assets/images/bt02.jpg" border="0" /></a></li>
+								<li><a href="#glossary"><img src="assets/images/bt03.jpg" border="0" /></a></li>
+							</ul><!-- END NAVLIST -->
+							<div class="shadow"></div>
+						</div><!-- END MUY TAI KICKBOXING CAT1 -->
+				<!--**********END SLIDE***********-->
+				
+				<!--///// VIDEO MUY TAI KICKBOXING VIDEOS CAT2 SLIDE /////-->
+				<!--**********BEGIN SLIDE***********-->
+						<div id="muy_tai_kickboxing_cat2">
+							<div class="toolbar">
+								<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />
+								<table width="100%">
+									<tr>
+										<td width="75px">
+											<a class="back" href="#"><img src="assets/images/btBack.jpg" alt="back" class="backbutton" /></a>
+										</td>
+										<td>
+											<img src="assets/images/hd_muy_tai_kickboxing.png" alt="MUY TAI KICKBOXING" class="pagetitle" />
+										</td>
+									</tr>
+								</table>			   
+							</div><!-- END TOOLBAR -->
+							<ul class="scrollList">
+								<li class="arrow first"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_a.png" alt="ITEM A" /></a></li>
+								<li class="arrow"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_b.png" alt="TITEM B" /></a></li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+							</ul><!-- END SCROLLLIST -->
+							<ul class="navList">
+								<li><a href="#timer"><img src="assets/images/bt01.jpg" border="0"/></a></li>
+								<li><a href="#video_tutorials"><img src="assets/images/bt02.jpg" border="0" /></a></li>
+								<li><a href="#glossary"><img src="assets/images/bt03.jpg" border="0" /></a></li>
+							</ul><!-- END NAVLIST -->
+							<div class="shadow"></div>
+						</div><!-- END MUY TAI KICKBOXING CAT 2 -->
+				<!--**********END SLIDE***********-->
+		
+		<!--///// VIDEO BOXING VIDEOS SLIDE /////-->
+		<!--**********BEGIN SLIDE***********-->
+				<div id="boxing">
+					<div class="toolbar">
+						<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />
+						<table width="100%">
+							<tr>
+								<td width="75px">
+									<a class="back" href="#"><img src="assets/images/btBack.jpg" alt="back" class="backbutton" /></a>
+								</td>
+								<td>
+									<img src="assets/images/hd_boxing.png" alt="BOXING" class="pagetitle" />
+								</td>
+							</tr>
+						</table>			   
+					</div><!-- END TOOLBAR -->
+					<ul class="scrollList">
+						<li class="arrow first"><a href="#boxing_cat1"><img src="assets/images/li_boxing_cat1.png" alt="BOXING CAT 1" /></a></li>
+						<li class="arrow"><a href="#boxing_cat2"><img src="assets/images/li_boxing_cat2.png" alt="BOXING CAT 2" /></a></li>
+						<li>&nbsp;</li>
+						<li>&nbsp;</li>
+						<li>&nbsp;</li>
+						<li>&nbsp;</li>
+						<li>&nbsp;</li>
+					</ul><!-- END SCROLLLIST -->
+					<ul class="navList">
+						<li><a href="#timer"><img src="assets/images/bt01.jpg" border="0"/></a></li>
+						<li><a href="#video_tutorials"><img src="assets/images/bt02.jpg" border="0" /></a></li>
+						<li><a href="#glossary"><img src="assets/images/bt03.jpg" border="0" /></a></li>
+					</ul><!-- END NAVLIST -->
+					<div class="shadow"></div>
+				</div><!-- END BOXING -->
+		<!--**********END SLIDE***********-->
+		
+				<!--///// VIDEO BOXING VIDEOS CAT1 SLIDE /////-->
+				<!--**********BEGIN SLIDE***********-->
+						<div id="boxing_cat1">
+							<div class="toolbar">
+								<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />
+								<table width="100%">
+									<tr>
+										<td width="75px">
+											<a class="back" href="#"><img src="assets/images/btBack.jpg" alt="back" class="backbutton" /></a>
+										</td>
+										<td>
+											<img src="assets/images/hd_boxing.png" alt="BOXING" class="pagetitle" />
+										</td>
+									</tr>
+								</table>			   
+							</div><!-- END TOOLBAR -->
+							<ul class="scrollList">
+								<li class="arrow first"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_a.png" alt="ITEM A" /></a></li>
+								<li class="arrow"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_b.png" alt="TITEM B" /></a></li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+							</ul><!-- END SCROLLLIST -->
+							<ul class="navList">
+								<li><a href="#timer"><img src="assets/images/bt01.jpg" border="0"/></a></li>
+								<li><a href="#video_tutorials"><img src="assets/images/bt02.jpg" border="0" /></a></li>
+								<li><a href="#glossary"><img src="assets/images/bt03.jpg" border="0" /></a></li>
+							</ul><!-- END NAVLIST -->
+							<div class="shadow"></div>
+						</div><!-- END BOXING CAT1 -->
+				<!--**********END SLIDE***********-->
+				
+				<!--///// VIDEO BOXING VIDEOS CAT2 SLIDE /////-->
+				<!--**********BEGIN SLIDE***********-->
+						<div id="boxing_cat2">
+							<div class="toolbar">
+								<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />
+								<table width="100%">
+									<tr>
+										<td width="75px">
+											<a class="back" href="#"><img src="assets/images/btBack.jpg" alt="back" class="backbutton" /></a>
+										</td>
+										<td>
+											<img src="assets/images/hd_boxing.png" alt="BOXING" class="pagetitle" />
+										</td>
+									</tr>
+								</table>			   
+							</div><!-- END TOOLBAR -->
+							<ul class="scrollList">
+								<li class="arrow first"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_a.png" alt="ITEM A" /></a></li>
+								<li class="arrow"><a href="#temp_vid" class="pop"><img src="assets/images/li_item_b.png" alt="TITEM B" /></a></li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+							</ul><!-- END SCROLLLIST -->
+							<ul class="navList">
+								<li><a href="#timer"><img src="assets/images/bt01.jpg" border="0"/></a></li>
+								<li><a href="#video_tutorials"><img src="assets/images/bt02.jpg" border="0" /></a></li>
+								<li><a href="#glossary"><img src="assets/images/bt03.jpg" border="0" /></a></li>
+							</ul><!-- END NAVLIST -->
+							<div class="shadow"></div>
+						</div><!-- END BOXING CAT2 -->
+				<!--**********END SLIDE***********-->
+
+<!--///// TIMER MAIN SLIDE /////-->	
+<!--**********BEGIN SLIDE***********-->
+		<div id="timer">
+			<div class="toolbarTimer">
+				<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />		   				 
+			</div><!-- END TOOLBAR -->
+			<div id="timer_container">
+				<div id="timer_display">
+					<input type="text" id="timer_display_input" value="00:00:00" />
+				</div>
+				<div id="timer_control">
+					<a href="#"><img src="assets/images/bt_start.jpg" alt="START" style="margin-top:3px;" /></a>
+					<a href="#"><img src="assets/images/bt_pause.jpg" alt="PAUSE" /></a><a href="#"><img src="assets/images/bt_reset.jpg" alt="RESET" /></a>
+					<a href="#"><img src="assets/images/bt_setRoundTime.jpg" alt="SET ROUND TIME" /></a>
+				</div>
+			</div><!-- END TIMER CONTAINER -->
+			<ul class="navList">
+				<li><img src="assets/images/bt01.jpg" border="0"/></li>
+				<li><a href="#video_tutorials"><img src="assets/images/bt02.jpg" border="0" /></a></li>
+				<li><a href="#glossary"><img src="assets/images/bt03.jpg" border="0" /></a></li>
+			</ul><!-- END NAVLIST -->
+		</div><!-- END TIMER -->
+<!--**********END SLIDE***********-->
+
+<!--///// TIMER HORIZONTAL MAIN SLIDE /////-->	
+<!--**********BEGIN SLIDE***********-->
+		<div id="timer_horizontal">
+			<div id="timer_container_horizontal">
+				<div id="timer_display_horizontal">
+					<input type="text" id="timer_display_horizontal_input" value="00:00:00" />
+				</div>
+				<div id="timer_control_horizontal">
+					<a href="#"><img src="assets/images/bt_start_horizontal.jpg" alt="START" /></a>
+					<a href="#"><img src="assets/images/bt_pause_horizontal.jpg" alt="PAUSE" /></a><a href="#"><img src="assets/images/bt_reset_horizontal.jpg" alt="RESET" /></a>
+				</div>
+			</div><!-- END TIMER DISPLAY HORIZONTAL -->
+		</div><!-- END TIMER HORIZONTAL -->
+<!--**********END SLIDE***********-->
+
+<!--///// GLOSSARY MAIN SLIDE /////-->	
+<!--**********BEGIN SLIDE***********-->
+		<div id="glossary">
+			<div class="toolbarglossary">
+				<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />
+				<table width="100%">
+					<tr>
+						<td width="75px">
+							<a class="back" href="#"><img src="assets/images/btBack.jpg" alt="back" class="backbutton" /></a>
+						</td>
+						<td>
+							<img src="assets/images/hd_glossary.png" alt="GLOSSARY" class="pagetitle" style="margin-left:33px;" />	
+						</td>
+					</tr>
+				</table>
+				<div id="searchinput">
+					<input type="text" width="100" />
+				</div>			   
+			</div><!-- END TOOLBAR -->
+			<ul class="scrollListGlossary">
+				<li class="first"><img src="assets/images/gi_letter_a.png" alt="A" /></li>
+				<li><img src="assets/images/gi_americana.png" alt="AMERICANA" /></li>
+				<li><img src="assets/images/gi_armbar.png" alt="ARMBAR" /></li>
+				<li><img src="assets/images/gi_letter_b.png" alt="B" /></li>
+				<li><img src="assets/images/gi_base.png" alt="BASE" /></li>
+				<li><img src="assets/images/gi_belt.png" alt="BELT" /></li>
+				<li><img src="assets/images/gi_breakfall.png" alt="BREAKFALL" /></li>
+				<li><img src="assets/images/gi_bridge.png" alt="BRIDGE" /></li>
+				<li><img src="assets/images/gi_butterfly_guard.png" alt="BUTTERFLY GUARD" /></li>
+			</ul><!-- END SCROLLLIST -->
+			<ul class="navList">
+				<li><a href="#timer"><img src="assets/images/bt01.jpg" border="0"/></a></li>
+				<li><a href="#video_tutorials"><img src="assets/images/bt02.jpg" border="0" /></a></li>
+				<li><img src="assets/images/bt03.jpg" border="0" /></li>
+			</ul><!-- END NAVLIST -->
+		</div><!-- END GLOSSARY -->
+<!--**********END SLIDE***********-->
+
+<!-- ///////////BEGIN VIDEOS /////////////-->
+
+<!--///// TEMPORARY VIDEO SLIDE /////-->	
+<!--**********BEGIN VIDEO TEMP_VID***********-->
+		<div id="temp_vid">
+			<div class="toolbar">
+				<img src="assets/images/head.jpg" alt="MMA TRAINER" class="headerImage" />
+				<table width="100%">
+					<tr>
+						<td width="75px">
+							<a class="back" href="#"><img src="assets/images/btBack.jpg" alt="back" class="backbutton" /></a>
+						</td>
+						<td>
+							<img src="assets/images/hd_video_placeholder.png" alt="TEMP VIDEO" class="pagetitle" />
+						</td>
+					</tr>
+				</table>			   
+			</div><!-- END TOOLBAR -->
+			<div class="video_player_container">
+				<img src="assets/images/temp_video_placeholder.jpg" alt="temp" />
+			</div>
+			<div class="shadow"></div>
+		</div><!-- END TEMP VID -->
+<!--**********END VIDEO TEMP VID***********-->
+	</body>
+</html>
